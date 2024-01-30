@@ -30,7 +30,9 @@ body {
 .en {
     font-family: 'Exo 2', sans-serif;
 }
-
+br.mo {
+    display: none;
+}
 /* header style */
 header {
     background: rgba(0, 0, 0, 0.2);
@@ -118,6 +120,11 @@ header .inner-header .tnb li:last-child a {
     border: 1px solid #fff;
     border-radius: 30px;
     padding: 5px 15px;
+}
+
+/* 모바일 전용 햄버거 버튼은 default가 dispaly:none으로 */
+header .inner-header nav .gnb-mobile {
+    display: none;
 }
 
 header .inner-header .tnb li:last-child a:hover {
@@ -394,19 +401,23 @@ section.me ul.list>li .more span {
     margin-left: 3px;
     font-size: 14px;
 }
+
 section.me ul.list ul.in {
     margin-bottom: 30px;
 }
+
 section.me ul.list ul.in li em {
     /*float이나 position이 적용되면 자동으로 block요소로 바뀜*/
     float: left;
     font-weight: bold;
     width: 12%;
 }
+
 section.me ul.list ul.in li p {
     float: left;
     position: relative;
 }
+
 section.me ul.list ul.in li p::before {
     content: '';
     width: 4px;
@@ -428,8 +439,9 @@ section.me ul.list ul.in li p::before {
     border-radius: 50px;
     padding: 10px 0;
     cursor: pointer;
-    
+
 }
+
 #incruit-btn:hover {
     background: #f86010;
 }
@@ -438,9 +450,11 @@ section.me ul.list ul.in li p::before {
 section.sns {
     margin-bottom: 60px;
 }
+
 section.sns ul {
     margin: 50px 0;
 }
+
 section.sns ul li {
     float: left;
     width: 32%;
@@ -448,50 +462,60 @@ section.sns ul li {
     margin-top: 50px;
     box-sizing: border-box;
 }
+
 section.sns .sub-container {
     margin: 0 auto;
 }
+
 section.sns ul li .img-box {
     height: 220px;
     overflow: hidden;
 }
+
 section.sns ul li:last-child {
     margin-right: 0;
 }
+
 section.sns ul li .bottom {
     padding: 20px;
 }
+
 section.sns ul li .bottom .color {
     color: #ff8342;
     margin-bottom: 10px;
 }
+
 section.sns ul li .bottom p:nth-child(2) {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 section.sns ul li .bottom p:last-child {
     color: lightgray;
     font-size: 12px;
-    
+
 }
+
 section.sns ul li .bottom p.time i {
     margin-right: 5px;
     font-size: 0.9em;
 }
+
 section.sns ul li .img-box {
     width: 100%;
     position: relative;
-    
-    
+
+
 }
+
 section.sns ul li .img-box img {
     width: 100%;
     height: 100%;
 }
 
-    
 
- section.sns ul li .img-box::before {
+
+section.sns ul li .img-box::before {
     content: '';
     width: 0;
     height: 100%;
@@ -501,9 +525,11 @@ section.sns ul li .img-box img {
     left: 0;
     transition: 0.3s;
 }
+
 section.sns ul li .img-box:hover:before {
     width: 100%;
-} 
+}
+
 section.sns ul li .img-box::after {
     content: 'BLOG';
     text-align: center;
@@ -516,43 +542,58 @@ section.sns ul li .img-box::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     opacity: 0;
 }
+
 section.sns ul li .img-box:hover::after {
     opacity: 1;
     transition: 1s;
 }
+
 /* footer .inner * {
      float: left;  }*/
+footer .inner {
+    margin: 0 auto;
+    width: 84%;
+}
 
 footer {
     padding: 20px 150px;
-    
+
     line-height: 60px;
-        border-top: 2px solid #000;
+    border-top: 2px solid #000;
 }
+
 footer .ft-logo {
     margin-top: 7px;
     margin-right: 100px;
     float: left;
 }
+
 footer .address {
     font-weight: bold;
     font-size: 15px;
-    margin-right: 20%;
+    margin-right: 100px;
     float: left;
-box-sizing: border-box;
-     
-    }
-    footer .address li {
-        height: 20px;
-    }
+    box-sizing: border-box;
+
+}
+
+footer .address li {
+    height: 20px;
+}
+
 footer .address .en {
     display: block;
     font-size: 14px;
     color: rgba(214, 207, 207, 0.877);
 }
+
+footer .inner .list {
+    float: right;
+}
+
 footer ul.list li {
     float: left;
 }
@@ -560,6 +601,241 @@ footer ul.list li {
 footer ul.list li a {
     margin: 0 30px;
 }
+
 footer ul.list li:last-child {
     font-weight: bold;
 }
+
+footer ul.list li a:hover {
+    color: #ff8342;
+    text-decoration: underline;
+}
+
+
+/* ================= 반응형 웹 디자인 ==================== */
+
+/* 노트북 해상도 1600px 미만 */
+@media(max-width:1599px) {
+    header .inner-header nav {
+        display: none;
+    }
+
+    header .inner-header .gnb-mobile {
+        display: block;
+        float: right;
+        color: #fff;
+        font-size: 40px;
+    }
+
+    section.main .main-title h2 {
+        font-size: 35px;
+    }
+
+    section.main .main-title p {
+        font-size: 15px;
+    }
+
+    section.main .main-title .view {
+        font-size: 12px;
+        width: 120px;
+    }
+
+    section.sns ul li .img-box {
+        max-height: 170px;
+    }
+
+    footer .inner .ft-logo {
+        width: 30%;
+    }
+}
+
+/* 태블릿 1024px  이하 해상도 (아이패드 프로) */
+@media (max-width:1024px) {
+
+    header .inner-header,
+    section .sub-container,
+    footer .inner {
+        width: 95%;
+    }
+
+    section.main .main-title h2 {
+        font-size: 45px;
+    }
+
+    section.main .main-title p {
+        font-size: 22px;
+    }
+
+    section.main .main-title .view {
+        font-size: 16px;
+        width: 180px;
+    }
+
+    section.me ul.list ul.in li p::before {
+        left: -20px;
+    }
+
+    footer .inner .list {
+        float: left;
+    }
+}
+
+/* 태블릿 768px 이하 해상도 */
+@media (max-width:768px) {
+    section.main .main-title h2 {
+        font-size: 40px;
+    }
+
+    section.main .main-title p {
+        font-size: 18px;
+    }
+
+    section.about .sub-container li {
+        float: none;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    section.about .sub-container li .img-box {
+        height: 500px;
+    }
+
+    section.innovation .img-box .inner .bottom {
+        padding: 30px;
+    }
+
+    section.innovation .img-box .inner .bottom p {
+        float: none;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    section.innovation .img-box .inner .bottom a {
+        float: none;
+        display: block;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    section.me {
+        padding: 50px 0;
+    }
+
+    section.me ul.list ul.in li em {
+        float: none;
+        width: 100%;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    section.me ul.list ul.in li p {
+        float: none;
+        margin-top: 10px;
+    }
+
+    section.sns ul li {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    section.sns ul li a .img-box {
+        max-height: none;
+    }
+
+    footer .inner .ft-logo {
+        float: none;
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    footer .inner .address {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    footer .inner .list li {
+        margin-left: 60px;
+    }
+}
+
+/* 모바일 414px 이하 해상도 (아이폰 6/7/8 plus) */
+
+@media screen and (max-width: 414px) {
+    header {
+        height: 80px;
+        line-height: 80px;
+    }
+
+    header .inner-header .logo {
+        width: 150px;
+    }
+
+    section.main .main-title h2 {
+        font-size: 30px;
+    }
+
+    section.main .main-title p {
+        font-size: 16px;
+    }
+
+    section.main .main-title .view {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    section .title h2 {
+        font-size: 25px;
+    }
+
+    section .title p {
+        font-size: 14px;
+    }
+
+    section.about {
+        padding: 30px 0;
+    }
+
+    section.about .sub-container li .img-box {
+        height: 300px;
+    }
+
+    section.about .sub-container li {
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        background: #fafafa;
+        margin-bottom: 30px;
+        height: fit-content;
+    }
+
+    section.innovation .img-box {
+        height: 400px;
+    }
+
+    section.innovation .img-box .inner {
+        top: 50%;
+    }
+
+    section.me ul.list>li {
+        padding: 20px 20px 20px 45px;
+    }
+
+    section.me ul.list>li p {
+        text-align: justify;
+    }
+
+    footer .inner .ft-logo {
+        width: 50%;
+    }
+
+    footer .inner .list {
+        display: none;
+    }
+
+    br.mo {
+        display: block;
+    } }
+   
